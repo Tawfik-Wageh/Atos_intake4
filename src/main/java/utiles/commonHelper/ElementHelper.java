@@ -2,7 +2,9 @@ package utiles.commonHelper;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
@@ -10,50 +12,37 @@ import java.util.List;
 public class ElementHelper {
     private static final int waitingTime = 30;
 
-    /**
-     * -----------------------------
-     * Can be extracted into a separate class: WaitHelper
-     * -----------------------------
-     **/
-
     public static WebElement waitForVisibility(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return WaitHelper.waitForVisibility(driver, locator);
     }
 
     public static WebElement waitForClickable(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return WaitHelper.waitForClickable(driver, locator);
     }
 
     public static void waitForInvisibility(WebDriver driver, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+        WaitHelper.waitForInvisibility(driver, locator);
     }
 
     public static void waitUntilTextPresent(WebDriver driver, By locator, String expectedText) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, expectedText));
+        WaitHelper.waitUntilTextPresent(driver, locator, expectedText);
     }
 
     public static WebElement fluentWait(WebDriver driver, By locator) {
-        Wait<WebDriver> wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(20))
-                .pollingEvery(Duration.ofSeconds(2))
-                .ignoring(NoSuchElementException.class);
-        return wait.until(driver1 -> driver1.findElement(locator));
+        return WaitHelper.fluentWait(driver, locator);
     }
 
     public static void waitForLoaderToDisappear(WebDriver driver, By loaderLocator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(loaderLocator));
+        WaitHelper.waitForLoaderToDisappear(driver, loaderLocator);
     }
 
-    /**
-     * -----------------------------
-     * Can be extracted into a separate class: BaseElementHelper
-     * -----------------------------
-     **/
+    public static void waitForUrlContains(WebDriver driver, String fragment) {
+        WaitHelper.waitForUrlContains(driver, fragment);
+    }
+
+    public static void waitForDocumentReady(WebDriver driver) {
+        WaitHelper.waitForDocumentReady(driver);
+    }
 
     public static WebElement findElementBy(WebDriver driver, By locator) {
         return waitForVisibility(driver, locator);
@@ -66,6 +55,7 @@ public class ElementHelper {
                 By.xpath("//*[text()='" + text + "']")));
 
     }
+
     public static WebElement findElementByValue(String value, WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -80,17 +70,15 @@ public class ElementHelper {
     }
 
     public static void click(WebDriver driver, By locator) {
-        waitForClickable(driver, locator).click();
+        WaitHelper.clickWhenClickable(driver, locator);
     }
 
     public static void click(WebElement webElement) {
         webElement.click();
     }
 
-    public static void sendText( WebDriver driver, By locator,String text) {
-        WebElement element = waitForVisibility(driver, locator);
-        element.clear();
-        element.sendKeys(text);
+    public static void sendText(WebDriver driver, By locator, String text) {
+        WaitHelper.typeWhenVisible(driver, locator, text);
     }
 
     public static void clearInput(WebDriver driver, By locator) {
@@ -101,8 +89,10 @@ public class ElementHelper {
         return waitForVisibility(driver, locator).getText();
     }
 
-    public static  String getCurrentUrl(WebDriver driver){
-        return driver.getCurrentUrl();}
+    public static String getCurrentUrl(WebDriver driver) {
+        return driver.getCurrentUrl();
+    }
+
     public static List<WebElement> getElements(WebDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitingTime));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
@@ -125,13 +115,7 @@ public class ElementHelper {
         }
     }
 
-    /**
-     * -----------------------------
-     * Can be extracted into a separate class: DropdownHelper
-     * -----------------------------
-     **/
-
-    public static void selectFromDropDownByText( WebDriver driver, By locator ,String text) {
+    public static void selectFromDropDownByText(WebDriver driver, By locator, String text) {
         Select select = new Select(waitForClickable(driver, locator));
         select.selectByVisibleText(text);
     }
@@ -146,11 +130,6 @@ public class ElementHelper {
         select.selectByValue(value);
     }
 
-    /**
-     * -----------------------------
-     * Can be extracted into a separate class: JavaScriptHelper
-     * -----------------------------
-     **/
     public static void scrollToElement(WebDriver driver, By locator) {
         WebElement element = waitForVisibility(driver, locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -165,16 +144,11 @@ public class ElementHelper {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", element);
     }
 
-    /**
-     * -----------------------------
-     * Can be extracted into a separate class: ActionsHelper
-     * -----------------------------
-     **/
 
     public static void hoverOver(WebDriver driver, By locator) {
         Actions actions = new Actions(driver);
         WebElement element = waitForVisibility(driver, locator);
         actions.moveToElement(element).perform();
     }
-    }
+}
 

@@ -1,25 +1,27 @@
 package utiles.commonHelper;
 
-import net.bytebuddy.asm.Advice;
 
 public class Global {
-  private String Password;
-    private  String MobileNumber;
+    static Global Instance;
+    private String Password;
+    private String MobileNumber;
     private String Email;
-    private   String FullName;
-    static  Global Instance;
+    private String FullName;
 
-    private  Global(){
+    private Global() {
     }
-    public static  Global  getInstance(){
-        if(Instance==null)
-        { Instance=new Global();
+
+    public static Global getInstance() {
+        if (Instance == null) {
+            Instance = new Global();
         }
-        return Instance ;
+        return Instance;
     }
+
     public String getPassword() {
         return Password;
     }
+
     public void setPassword() {
         this.Password = RandomSource.generatePassword();
     }
@@ -43,6 +45,7 @@ public class Global {
     public String getFullName() {
         return FullName;
     }
+
     public void setFullName() {
         FullName = RandomSource.generateFullName();
     }

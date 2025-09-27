@@ -9,6 +9,8 @@ import utiles.commonHelper.Global;
 public class SignupPage {
     WebDriver driver;
     Global global;
+
+    // Locators
     By Name = By.name("name");
     By Email = By.xpath("//input[@data-qa='signup-email']");
     By SignupBtn = By.xpath("//button[text()='Signup']");
@@ -29,11 +31,11 @@ public class SignupPage {
     By Mobile_number = By.id("mobile_number");
     By Create_Account = By.xpath("//button[text()='Create Account']");
     By AccountCreatedMessage = By.xpath("//h2[@data-qa='account-created']");
-    By LogOutBtn=By.linkText("Logout");
+    By LogOutBtn = By.linkText("Logout");
 
     public SignupPage() {
         this.driver = DriverManager.getDriver();
-        global=Global.getInstance();
+        global = Global.getInstance();
     }
 
     public SignupPage enterName(String name) {
@@ -56,15 +58,18 @@ public class SignupPage {
         ElementHelper.findElementByValue(text, driver).click();
         return this;
     }
+
     public SignupPage enterPassword() {
         global.setPassword();
-        ElementHelper.sendText(driver, Password,global.getPassword());
+        ElementHelper.sendText(driver, Password, global.getPassword());
         return this;
     }
+
     public SignupPage chooseDay(String day) {
         ElementHelper.selectFromDropDownByText(driver, DaysDropdown, day);
         return this;
     }
+
     public SignupPage chooseMonth(String month) {
         ElementHelper.selectFromDropDownByText(driver, MonthDropdown, month);
         return this;
@@ -124,6 +129,7 @@ public class SignupPage {
         ElementHelper.click(driver, Create_Account);
         return this;
     }
+
     public SignupPage clickOnLogOnBtn() {
         ElementHelper.click(driver, LogOutBtn);
         return this;

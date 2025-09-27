@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class AssertionHelper {
+
     // Assert element is present and displayed
     public static void assertElementPresent(WebDriver driver, By locator) {
         try {
@@ -15,6 +16,7 @@ public class AssertionHelper {
             Assert.fail("❌ Element not found: " + locator);
         }
     }
+
     // Assert current URL matches expected URL
     public static void assertUrl(WebDriver driver, String expectedUrl) {
         String actualUrl = ElementHelper.getCurrentUrl(driver);
@@ -47,11 +49,13 @@ public class AssertionHelper {
         Assert.assertEquals(actual, expected,
                 "❌ Expected: [" + expected + "] but found: [" + actual + "]");
     }
+
     // Assert equality for numbers
     public static void assertEqual(Number actual, Number expected) {
         Assert.assertEquals(actual, expected,
                 "❌ Expected: [" + expected + "] but found: [" + actual + "]");
     }
+
     // Assert text of a web element matches expected value
     public static void assertElementText(WebDriver driver, By locator, String expectedText) {
         String actualText = ElementHelper.waitForVisibility(driver, locator).getText();

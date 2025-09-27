@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-26T22:13:43 EEST" name="Surefire suite" finished-at="2025-09-26T22:14:39 EEST" duration-ms="56346">
+    <groups>
+      <group name="smoke">
+        <method signature="E2EAutomationExerciseTest.testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" name="testBrowseProducts" class="E2EAutomationExerciseTest"/>
+      </group> <!-- smoke -->
+      <group name="browse">
+        <method signature="E2EAutomationExerciseTest.testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" name="testBrowseProducts" class="E2EAutomationExerciseTest"/>
+      </group> <!-- browse -->
+    </groups>
+    <test started-at="2025-09-26T22:13:43 EEST" name="Surefire test" finished-at="2025-09-26T22:14:39 EEST" duration-ms="56346">
+      <class name="E2EAutomationExerciseTest">
+        <test-method is-config="true" signature="Init()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:13:43 EEST" name="Init" finished-at="2025-09-26T22:13:54 EEST" duration-ms="10748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Init -->
+        <test-method signature="testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:13:54 EEST" name="testBrowseProducts" finished-at="2025-09-26T22:14:38 EEST" duration-ms="44816" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBrowseProducts -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:14:39 EEST" name="closeDriver" finished-at="2025-09-26T22:14:39 EEST" duration-ms="668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- E2EAutomationExerciseTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

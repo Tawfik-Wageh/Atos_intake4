@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Logout and Session Validation Test Suite" verbose="1">
+    <test name="Logout and Session Validation Test">
+        <classes>
+            <class name="E2EAutomationExerciseTest">
+                <methods>
+                    <include name="testLogoutAndSessionValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

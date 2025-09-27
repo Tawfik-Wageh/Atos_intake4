@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Add to Cart Test Suite" verbose="1">
+    <test name="Add to Cart Test">
+        <classes>
+            <class name="E2E_User_Flow">
+                <methods>
+                    <include name="testAddToCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
