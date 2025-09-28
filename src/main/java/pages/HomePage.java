@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utiles.DriverMange.DriverManager;
 import utiles.commonHelper.ElementHelper;
-import utiles.config.LoadProperties;
 
 public class HomePage {
     WebDriver driver;
@@ -26,7 +25,11 @@ public class HomePage {
     }
 
     public void goToProducts() {
-        driver.get(LoadProperties.URL + "products");
+        By productsLocator = By.partialLinkText("Products");
+        utiles.commonHelper.WaitHelper.waitForClickable(driver, productsLocator); // Wait for Products link to be clickable
+        org.openqa.selenium.WebElement productsElement = driver.findElement(productsLocator);
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productsElement);
+        productsElement.click();
         utiles.commonHelper.WaitHelper.waitForPageToLoad(driver, "/products");
     }
 

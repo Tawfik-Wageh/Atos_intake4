@@ -74,7 +74,35 @@ public class ProductsPage {
         } catch (Exception ignored) {
         }
     }
+
+    public void openProductDetailsAt(int index) {
+        List<WebElement> links = ElementHelper.getElements(driver, ViewProductLinks);
+        if (links.size() > index) {
+            WebElement link = links.get(index);
+            try {
+                ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", link);
+            } catch (Exception ignored) {
+            }
+            try {
+                ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", link);
+                ElementHelper.waitForDocumentReady(driver);
+                return;
+            } catch (Exception ignored) {
+            }
+            try {
+                String href = link.getAttribute("href");
+                if (href != null && !href.isEmpty()) {
+                    driver.get(href);
+                    ElementHelper.waitForDocumentReady(driver);
+                    return;
+                }
+            } catch (Exception ignored) {
+            }
+            // Fallback to normal click if all else fails
+            link.click();
+            ElementHelper.waitForDocumentReady(driver);
+        } else {
+            throw new IllegalArgumentException("No product at index " + index);
+        }
+    }
 }
-
-
-

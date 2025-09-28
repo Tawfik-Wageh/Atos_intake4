@@ -6,12 +6,26 @@ import utiles.DriverMange.DriverManager;
 import utiles.commonHelper.ElementHelper;
 
 public class PaymentPage {
+    // ++++++++++++++++++++++++++ //
+    /*
+      This SUCCESS_XPATH is a robust locator for order success messages.
+      It covers multiple possible DOM structures and message variations that indicate an order was placed successfully.
+     (1) translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')
+         -Converts all text inside the node (.) to lowercase.
+         -This makes the search case-insensitive.
+     (2) Use of | (Union operator):
+         -Combines multiple XPath expressions.
+         -So Selenium will find the first element that matches any of these conditions.
+     */
     private static final String SUCCESS_XPATH = "//p[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'order placed successfully')] | "
             + "//p[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'your order has been placed successfully')] | "
             + "//div[contains(@class,'alert') and contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'successfully')] | "
             + "//h2[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'order placed')]";
-    WebDriver driver;
+    // +++++++++++++++++++++++++++++ //
+
     
+    WebDriver driver;
+
     // Locators
     By NameOnCard = By.name("name_on_card");
     By CardNumber = By.name("card_number");

@@ -2,6 +2,7 @@
   {
     "Name": "Ahmed",
     "Gender": "Mrs",
+    "Password": "Test@1234",
     "Day": "3",
     "Month": "March",
     "Year": "2000",
@@ -15,3 +16,4 @@
     "MobileNumber": "010"
   }
 ]
+

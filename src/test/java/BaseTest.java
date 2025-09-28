@@ -1,4 +1,4 @@
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import utiles.DriverMange.DriverManager;
 
@@ -9,7 +9,7 @@ public class BaseTest {
         DriverManager.driverSetup();
     }
 
-    @AfterTest
+    @AfterClass
     public void closeDriver() {
         DriverManager.closeDriver();
     }

@@ -1,31 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-26T22:13:43 EEST" name="Surefire suite" finished-at="2025-09-26T22:14:39 EEST" duration-ms="56346">
+  <suite started-at="2025-09-28T14:32:41 EEST" name="Surefire suite" finished-at="2025-09-28T14:32:47 EEST" duration-ms="5640">
     <groups>
-      <group name="smoke">
-        <method signature="E2EAutomationExerciseTest.testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" name="testBrowseProducts" class="E2EAutomationExerciseTest"/>
-      </group> <!-- smoke -->
-      <group name="browse">
-        <method signature="E2EAutomationExerciseTest.testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" name="testBrowseProducts" class="E2EAutomationExerciseTest"/>
-      </group> <!-- browse -->
+      <group name="regression">
+        <method signature="E2E_User_Flow.endToEndFlow()[pri:0, instance:E2E_User_Flow@233fe9b6]" name="endToEndFlow" class="E2E_User_Flow"/>
+      </group> <!-- regression -->
+      <group name="e2e">
+        <method signature="E2E_User_Flow.endToEndFlow()[pri:0, instance:E2E_User_Flow@233fe9b6]" name="endToEndFlow" class="E2E_User_Flow"/>
+      </group> <!-- e2e -->
     </groups>
-    <test started-at="2025-09-26T22:13:43 EEST" name="Surefire test" finished-at="2025-09-26T22:14:39 EEST" duration-ms="56346">
-      <class name="E2EAutomationExerciseTest">
-        <test-method is-config="true" signature="Init()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:13:43 EEST" name="Init" finished-at="2025-09-26T22:13:54 EEST" duration-ms="10748" status="PASS">
+    <test started-at="2025-09-28T14:32:41 EEST" name="Surefire test" finished-at="2025-09-28T14:32:47 EEST" duration-ms="5640">
+      <class name="E2E_User_Flow">
+        <test-method is-config="true" signature="Init()[pri:0, instance:E2E_User_Flow@233fe9b6]" started-at="2025-09-28T14:32:41 EEST" name="Init" finished-at="2025-09-28T14:32:47 EEST" duration-ms="5495" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Init -->
-        <test-method signature="testBrowseProducts()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:13:54 EEST" name="testBrowseProducts" finished-at="2025-09-26T22:14:38 EEST" duration-ms="44816" status="PASS">
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:E2E_User_Flow@233fe9b6]" started-at="2025-09-28T14:32:47 EEST" name="setUpMethod" finished-at="2025-09-28T14:32:47 EEST" duration-ms="59" status="FAIL">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 14 out of bounds for length 14]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 14 out of bounds for length 14
+at E2E_User_Flow.setUpMethod(E2E_User_Flow.java:61)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testBrowseProducts -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:E2EAutomationExerciseTest@5db250b4]" started-at="2025-09-26T22:14:39 EEST" name="closeDriver" finished-at="2025-09-26T22:14:39 EEST" duration-ms="668" status="PASS">
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="endToEndFlow()[pri:0, instance:E2E_User_Flow@233fe9b6]" started-at="2025-09-28T14:32:47 EEST" name="endToEndFlow" finished-at="2025-09-28T14:32:47 EEST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.ArrayIndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 14 out of bounds for length 14]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 14 out of bounds for length 14
+at E2E_User_Flow.setUpMethod(E2E_User_Flow.java:61)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArrayIndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endToEndFlow -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:E2E_User_Flow@233fe9b6]" started-at="2025-09-28T14:32:47 EEST" name="closeDriver" finished-at="2025-09-28T14:32:47 EEST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- E2EAutomationExerciseTest -->
+      </class> <!-- E2E_User_Flow -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

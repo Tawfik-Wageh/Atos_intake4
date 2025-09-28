@@ -126,6 +126,25 @@ public class SignupPage {
     }
 
     public SignupPage clickOnCreateAccountBtn() {
+        org.openqa.selenium.WebElement btn = driver.findElement(Create_Account);
+        try {
+            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btn);
+        } catch (Exception ignored) {
+        }
+        try {
+            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
+            return this;
+        } catch (Exception ignored) {
+        }
+        try {
+            String href = btn.getAttribute("href");
+            if (href != null && !href.isEmpty()) {
+                driver.get(href);
+                return this;
+            }
+        } catch (Exception ignored) {
+        }
+        // Fallback to normal click if all else fails
         ElementHelper.click(driver, Create_Account);
         return this;
     }
