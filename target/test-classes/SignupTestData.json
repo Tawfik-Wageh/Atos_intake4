@@ -1,19 +1,19 @@
 [
   {
-    "Name": "Ahmed",
-    "Gender": "Mrs",
+    "Name": "Tawfik",
+    "Gender": "Mr",
     "Password": "Test@1234",
     "Day": "3",
     "Month": "March",
     "Year": "2000",
-    "FirstName": "Rofida",
-    "LastName": "Rofida",
-    "Address": "add",
+    "FirstName": "Tawfik",
+    "LastName": "Wageh",
+    "Address": "Nasr city - cairo",
     "Country": "India",
-    "State": "Rofida",
-    "City": "Rofida",
-    "ZipCode": "Rofida",
-    "MobileNumber": "010"
+    "State": "menouf",
+    "City": "cairo",
+    "ZipCode": "265626",
+    "MobileNumber": "01012854795"
   }
 ]
 
