@@ -1,0 +1,38 @@
+[DEBUG] - [30-09-2025 14:28:43] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml"
+[INFO] - [30-09-2025 14:28:43] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+[DEBUG] - [30-09-2025 14:28:43] [main] [io.github.bonigarcia.wdm.WebDriverManager] - Using WebDriverManager 6.2.0
+[DEBUG] - [30-09-2025 14:28:44] [main] [io.github.bonigarcia.wdm.cache.ResolutionCache] - Resolution chrome=140 in cache (valid until 15:17:20 30/09/2025 EEST)
+[DEBUG] - [30-09-2025 14:28:44] [main] [io.github.bonigarcia.wdm.cache.ResolutionCache] - Resolution chrome140=140.0.7339.207 in cache (valid until 13:14:01 01/10/2025 EEST)
+[INFO] - [30-09-2025 14:28:44] [main] [io.github.bonigarcia.wdm.WebDriverManager] - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+[DEBUG] - [30-09-2025 14:28:44] [main] [io.github.bonigarcia.wdm.WebDriverManager] - Driver chromedriver 140.0.7339.207 found in cache
+[INFO] - [30-09-2025 14:28:44] [main] [io.github.bonigarcia.wdm.WebDriverManager] - Exporting webdriver.chrome.driver as C:\Users\Options\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+[INFO] - [30-09-2025 14:28:48] [main] [E2E_User_Flow.setUpMethod(E2E_User_Flow.java:33)] - Starting setup for test method
+[DEBUG] - [30-09-2025 14:28:48] [main] [E2E_User_Flow.setUpMethod(E2E_User_Flow.java:43)] - Page objects initialized
+[DEBUG] - [30-09-2025 14:28:48] [main] [E2E_User_Flow.setUpMethod(E2E_User_Flow.java:64)] - Signup data loaded from JSON
+[INFO] - [30-09-2025 14:28:58] [main] [E2E_User_Flow.setUpMethod(E2E_User_Flow.java:74)] - Signing up and logging in
+[INFO] - [30-09-2025 14:29:17] [main] [E2E_User_Flow.setUpMethod(E2E_User_Flow.java:99)] - Setup complete
+[INFO] - [30-09-2025 14:29:17] [main] [E2E_User_Flow.endToEndFlow(E2E_User_Flow.java:228)] - Starting endToEndFlow
+[INFO] - [30-09-2025 14:29:17] [main] [E2E_User_Flow.testBrowseProducts(E2E_User_Flow.java:105)] - Starting testBrowseProducts
+[INFO] - [30-09-2025 14:29:23] [main] [E2E_User_Flow.testBrowseProducts(E2E_User_Flow.java:114)] - testBrowseProducts completed
+[INFO] - [30-09-2025 14:29:23] [main] [E2E_User_Flow.testAddToCart(E2E_User_Flow.java:120)] - Starting testAddToCart
+[DEBUG] - [30-09-2025 14:29:28] [main] [E2E_User_Flow.testAddToCart(E2E_User_Flow.java:125)] - Added first product to cart with quantity 2
+[DEBUG] - [30-09-2025 14:29:34] [main] [E2E_User_Flow.testAddToCart(E2E_User_Flow.java:131)] - Added second product to cart with quantity 1
+[INFO] - [30-09-2025 14:29:35] [main] [E2E_User_Flow.testAddToCart(E2E_User_Flow.java:136)] - testAddToCart completed
+[INFO] - [30-09-2025 14:29:35] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:142)] - Starting testCheckoutAndPlaceOrder
+[DEBUG] - [30-09-2025 14:29:39] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:147)] - Added first product to cart for checkout
+[DEBUG] - [30-09-2025 14:29:45] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:153)] - Added second product to cart for checkout
+[INFO] - [30-09-2025 14:29:47] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:160)] - Reading checkout and payment data from Checkout.json
+[DEBUG] - [30-09-2025 14:29:47] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:172)] - Order comment: Please deliver between 9 AM - 5 PM.
+[DEBUG] - [30-09-2025 14:29:47] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:173)] - Payment details: name=Test User, cardNumber=4242424242424242, cvc=123, expiryMonth=12, expiryYear=2028
+[INFO] - [30-09-2025 14:29:47] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:177)] - Order comment added
+[INFO] - [30-09-2025 14:29:48] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:179)] - Order placed, entering payment details
+[INFO] - [30-09-2025 14:29:52] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:182)] - Payment confirmed
+[INFO] - [30-09-2025 14:29:52] [main] [E2E_User_Flow.testCheckoutAndPlaceOrder(E2E_User_Flow.java:184)] - testCheckoutAndPlaceOrder completed
+[INFO] - [30-09-2025 14:29:52] [main] [E2E_User_Flow.testContactUs(E2E_User_Flow.java:190)] - Starting testContactUs
+[DEBUG] - [30-09-2025 14:29:53] [main] [E2E_User_Flow.testContactUs(E2E_User_Flow.java:204)] - Contact form data: name=Tawfik Wageh, email=tawfik.wageh@gmail.com, subject=Order Support, message=Need help with my recent order.
+[INFO] - [30-09-2025 14:29:54] [main] [E2E_User_Flow.testContactUs(E2E_User_Flow.java:211)] - testContactUs completed
+[INFO] - [30-09-2025 14:29:54] [main] [E2E_User_Flow.testLogoutAndSessionValidation(E2E_User_Flow.java:218)] - Starting testLogoutAndSessionValidation
+[INFO] - [30-09-2025 14:29:56] [main] [E2E_User_Flow.testLogoutAndSessionValidation(E2E_User_Flow.java:222)] - testLogoutAndSessionValidation completed
+[INFO] - [30-09-2025 14:29:56] [main] [E2E_User_Flow.endToEndFlow(E2E_User_Flow.java:234)] - endToEndFlow completed
